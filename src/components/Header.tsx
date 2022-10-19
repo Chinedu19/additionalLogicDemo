@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 // import Autosuggest from "react-autosuggest";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { MdOutlineClose } from "react-icons/md";
+import { BiMenu } from "react-icons/bi";
 // const questions = [
 //   {
 //     question: "How to get a new card?",
@@ -52,10 +54,11 @@ const Header = () => {
   // const onSuggestionsClearRequested = () => {
   //   setSuggestions([]);
   // };
+  const [open, setOpen] = useState(false);
   return (
     <>
       <div className="w-full flex flex-col items-end justify-between px-10 py-2 pt-6 md:flex-row bg-white ">
-        <ul className="flex w-full gap-x-5 text-sm text-black">
+        <ul className="hidden md:flex w-full gap-x-5 text-sm text-black">
           <li className="cursor-pointer font-bold">Business</li>
           <li className="cursor-pointer">Finance</li>
           <li className="cursor-pointer">Investment</li>
@@ -63,7 +66,7 @@ const Header = () => {
 
         <div
           tabIndex={0}
-          className="flex items-center justify-center gap-x-2 border-b-2 border-b-black focus-within:border-b-blue-600"
+          className="w-full md:w-auto flex items-center justify-center gap-x-2 border-b-2 border-b-black focus-within:border-b-blue-600"
         >
           {/* <Autosuggest
           renderSuggestion={RenderSuggestion}
@@ -73,7 +76,7 @@ const Header = () => {
         getSuggestionValue={getSuggestionValue}
         
       /> */}
-          <input type="text" className="p-2 outline-none" />
+          <input type="text" className="w-full p-2 outline-none" />
           <FaSearch size={20} />
         </div>
       </div>
@@ -84,10 +87,23 @@ const Header = () => {
           <li>Services</li>
           <li>About</li>
         </ul>
+        {!open ? (
+          <BiMenu
+            className="text-white"
+            size={36}
+            onClick={() => setOpen(true)}
+          />
+        ) : (
+          <MdOutlineClose
+            className="text-white"
+            size={36}
+            onClick={() => setOpen(false)}
+          />
+        )}
 
         <div className="w-full">
           <Link to="/">
-            <h1 className="font-bold text-3xl">BFSI</h1>
+            <h1 className="font-bold text-center text-3xl">BFSI</h1>
           </Link>
         </div>
       </div>

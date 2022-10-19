@@ -67,7 +67,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="space-y-2">
-                <div className="flex md:flex-row flex-col pt-3 items-center">
+                <div className="flex md:flex-row pt-3 items-center">
                   <svg
                     className="w-4 mr-1"
                     xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,7 @@ const Home = () => {
                   <p className="text-sm">Customer experience</p>
                 </div>
 
-                <div className="flex md:flex-row flex-col pt-3 items-center">
+                <div className="flex md:flex-row pt-3 items-center">
                   <svg
                     className="w-4 mr-1"
                     xmlns="http://www.w3.org/2000/svg"
