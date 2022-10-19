@@ -6,13 +6,13 @@ import { BiCommand } from "react-icons/bi";
 import Stock from "../assets/images/stock.png";
 import Graph from "../assets/images/graph.png";
 import { imgArr } from "../App";
-
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <>
       <Header />
       <div
-        className="w-full h-[100vh]"
+        className="w-full h-[60vh] md:h-[80vh]"
         style={{ backgroundImage: `url(${BgImage})` }}
       >
         <div className="container flex pt-44 items-center px-6 mx-auto space-y-0 md:space-y-0 md:flex-row">
@@ -28,9 +28,12 @@ const Home = () => {
               <button className="px-8 text-sm font-semibold py-1 border border-darkGray text-darkGray bg-white rounded-sm hover:bg-darkGray hover:text-white">
                 Sign up
               </button>
-              <button className="text-white bg-lightBlue text-sm font-semibold py-1 px-12 rounded-sm hover:bg-black">
+              <Link
+                to={"/terms"}
+                className="text-white bg-lightBlue text-sm font-semibold py-1 px-12 rounded-sm hover:bg-black"
+              >
                 Next
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -54,7 +57,7 @@ const Home = () => {
               Asperiores culpa libero temporibus dolor adipisci perferendis
             </p>
 
-            <div className="md:flex md:flex-row font-semibold pb-10 md:space-x-14">
+            <div className="flex items-center justify-center md:justify-start gap-x-5 md:flex-row font-semibold pb-10 md:gap-x-14">
               <div className="space-y-2">
                 <div className="flex gap-x-2 flex-row pt-3 items-center">
                   <BiCommand />

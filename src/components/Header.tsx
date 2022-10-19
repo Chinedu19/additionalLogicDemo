@@ -90,14 +90,16 @@ const Header = () => {
         </ul>
 
         <BiMenu
-          className="text-white"
+          className="block md:hidden text-white"
           size={36}
           onClick={() => setOpen(true)}
         />
 
         <div className="w-full">
           <Link to="/">
-            <h1 className="font-bold text-center text-3xl">BFSI</h1>
+            <h1 className="font-bold text-center md:text-left text-3xl">
+              BFSI
+            </h1>
           </Link>
         </div>
       </div>

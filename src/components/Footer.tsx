@@ -11,7 +11,7 @@ const Footer = () => {
       style={{
         backgroundImage: `url('${FooterBg}')`,
       }}
-      className="bg-veryDarkBlue"
+      className="py-8 px-6"
     >
       <div className="flex flex-col-reverse justify-between pb-8 md:pt-16 space-y-12 md:space-y-0 md:flex-row">
         <div className="md:flex md:ml-28 hidden md:flex-col space-y-6 md:mr-10">
@@ -70,16 +70,16 @@ const Footer = () => {
             Latest tweets
           </h1>
 
-          <div className="flex md:flex-row md:gap-x-2 flex-col items-center">
-            <FiFacebook className="text-white" size={65} />
+          <div className="flex flex-col md:flex-row gap-x-2 items-center">
+            <FiFacebook className="text-white text-4xl md:text-6xl" />
 
             <p className="max-w-sm text-center text-[#575657] md:text-left">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
             </p>
           </div>
 
-          <div className="flex md:flex-row md:gap-x-2 flex-col items-center">
-            <FiTwitter className="text-white" size={65} />
+          <div className="flex flex-col md:flex-row gap-x-2 items-center">
+            <FiTwitter className="text-white text-4xl md:text-6xl" />
 
             <p className="max-w-sm text-center text-[#575657] md:text-left">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
