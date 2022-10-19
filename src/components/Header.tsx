@@ -2,8 +2,8 @@ import React, { useState } from "react";
 // import Autosuggest from "react-autosuggest";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { MdOutlineClose } from "react-icons/md";
 import { BiMenu } from "react-icons/bi";
+import SideBar from "./SideBar";
 // const questions = [
 //   {
 //     question: "How to get a new card?",
@@ -57,6 +57,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
+      <SideBar active={open} setActive={setOpen} />
       <div className="w-full flex flex-col items-end justify-between px-10 py-2 pt-6 md:flex-row bg-white ">
         <ul className="hidden md:flex w-full gap-x-5 text-sm text-black">
           <li className="cursor-pointer font-bold">Business</li>
@@ -87,19 +88,12 @@ const Header = () => {
           <li>Services</li>
           <li>About</li>
         </ul>
-        {!open ? (
-          <BiMenu
-            className="text-white"
-            size={36}
-            onClick={() => setOpen(true)}
-          />
-        ) : (
-          <MdOutlineClose
-            className="text-white"
-            size={36}
-            onClick={() => setOpen(false)}
-          />
-        )}
+
+        <BiMenu
+          className="text-white"
+          size={36}
+          onClick={() => setOpen(true)}
+        />
 
         <div className="w-full">
           <Link to="/">
