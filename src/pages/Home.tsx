@@ -145,7 +145,7 @@ const Home = () => {
                 <img
                   className="snap-center rounded-lg h-48 w-auto"
                   src={item}
-                  alt="image description"
+                  alt=""
                 />
               ))}
             </div>

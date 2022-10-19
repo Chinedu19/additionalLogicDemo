@@ -1,57 +1,57 @@
-import React, { useState } from "react";
-import Autosuggest from "react-autosuggest";
+import React from "react";
+// import Autosuggest from "react-autosuggest";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
-const questions = [
-  {
-    question: "How to get a new card?",
-  },
-  {
-    question: "How to get a loan?",
-  },
-  {
-    question: "How to get an auto loan?",
-  },
-  {
-    question: "How to get an extension on a payment?",
-  },
-  {
-    question: "How to get refunds for a fradulent claim?",
-  },
-];
+// const questions = [
+//   {
+//     question: "How to get a new card?",
+//   },
+//   {
+//     question: "How to get a loan?",
+//   },
+//   {
+//     question: "How to get an auto loan?",
+//   },
+//   {
+//     question: "How to get an extension on a payment?",
+//   },
+//   {
+//     question: "How to get refunds for a fradulent claim?",
+//   },
+// ];
 
-// Teach Autosuggest how to calculate suggestions for any given input value.
-const getSuggestions = (value: string) => {
-  const inputValue = value.trim().toLowerCase();
-  const inputLength = inputValue.length;
+// // Teach Autosuggest how to calculate suggestions for any given input value.
+// const getSuggestions = (value: string) => {
+//   const inputValue = value.trim().toLowerCase();
+//   const inputLength = inputValue.length;
 
-  return inputLength === 0
-    ? []
-    : questions.filter(
-        (lang) =>
-          lang.question.toLowerCase().slice(0, inputLength) === inputValue
-      );
-};
+//   return inputLength === 0
+//     ? []
+//     : questions.filter(
+//         (lang) =>
+//           lang.question.toLowerCase().slice(0, inputLength) === inputValue
+//       );
+// };
 
-// When suggestion is clicked, Autosuggest needs to populate the input
-// based on the clicked suggestion. Teach Autosuggest how to calculate the
-// input value for every given suggestion.
-const getSuggestionValue = (suggestion: { question: string }) =>
-  suggestion.question;
+// // When suggestion is clicked, Autosuggest needs to populate the input
+// // based on the clicked suggestion. Teach Autosuggest how to calculate the
+// // input value for every given suggestion.
+// const getSuggestionValue = (suggestion: { question: string }) =>
+//   suggestion.question;
 
-// Use your imagination to render suggestions.
-const renderSuggestion = (suggestion: { question: string }) => (
-  <div>{suggestion.question}</div>
-);
+// // Use your imagination to render suggestions.
+// const RenderSuggestion = (suggestion: { question: string }) => (
+//   <div>{suggestion.question}</div>
+// );
 const Header = () => {
-  const [value, setValue] = useState("");
-  const [suggestions, setSuggestions] = useState<typeof questions>([]);
-  const onSuggestionsFetchRequested = (value: string) => {
-    setSuggestions(getSuggestions(value));
-  };
-  const onSuggestionsClearRequested = () => {
-    setSuggestions([]);
-  };
+  // const [value, setValue] = useState("");
+  // const [suggestions, setSuggestions] = useState<typeof questions>([]);
+  // const onSuggestionsFetchRequested = (value:string) => {
+  //   setSuggestions(getSuggestions(value));
+  // };
+  // const onSuggestionsClearRequested = () => {
+  //   setSuggestions([]);
+  // };
   return (
     <>
       <div className="w-full flex flex-col items-end justify-between px-10 py-2 pt-6 md:flex-row bg-white ">
@@ -66,13 +66,14 @@ const Header = () => {
           className="flex items-center justify-center gap-x-2 border-b-2 border-b-black focus-within:border-b-blue-600"
         >
           {/* <Autosuggest
+          renderSuggestion={RenderSuggestion}
         suggestions={suggestions}
-        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+        onSuggestionsFetchRequested={({value}) => onSuggestionsFetchRequested(value)}
         onSuggestionsClearRequested={onSuggestionsClearRequested}
         getSuggestionValue={getSuggestionValue}
         
       /> */}
-          {/* <input type="text" className="p-2 outline-none" /> */}
+          <input type="text" className="p-2 outline-none" />
           <FaSearch size={20} />
         </div>
       </div>

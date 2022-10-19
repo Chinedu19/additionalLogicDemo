@@ -49,7 +49,7 @@ const Footer = () => {
                 <img
                   className="object-cover rounded-md h-12 w-14"
                   src={item}
-                  alt="image description"
+                  alt=""
                 />
               ))}
             </div>
@@ -58,7 +58,7 @@ const Footer = () => {
                 <img
                   className="object-cover rounded-md h-12 w-14"
                   src={item}
-                  alt="image description"
+                  alt=""
                 />
               ))}
             </div>

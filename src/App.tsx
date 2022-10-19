@@ -1,10 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Header from "./components/Header";
-import BgImage from "./assets/images/bg-Image.png";
-import Stock from "./assets/images/stock.png";
-import Graph from "./assets/images/graph.png";
 import Person from "./assets/images/person.png";
 import Person2 from "./assets/images/person2.png";
 import Person3 from "./assets/images/person3.png";
