@@ -7,12 +7,22 @@ import Stock from "../assets/images/stock.png";
 import Graph from "../assets/images/graph.png";
 import { imgArr } from "../App";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 const Home = () => {
+  const [width, setWidth] = React.useState(0);
+  const carousel = React.useRef<HTMLDivElement | null>(null);
+  React.useEffect(() => {
+    if (carousel.current) {
+      console.log("here");
+      setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+    }
+  }, []);
+
   return (
     <>
       <Header />
       <div
-        className="w-full h-[60vh] md:h-[80vh]"
+        className="w-full h-[70vh] md:h-[80vh]"
         style={{ backgroundImage: `url(${BgImage})` }}
       >
         <div className="container flex pt-44 items-center px-6 mx-auto space-y-0 md:space-y-0 md:flex-row">
@@ -142,17 +152,27 @@ const Home = () => {
               Temporibus tempore inventore accusamus aliquid architecto
             </p>
           </div>
-          <div className="w-full overflow-hidden">
-            <div className="flex pl-5 md:pl-0 container flex-row space-x-4 snap-x overflow-x-auto scroll-hide">
-              {imgArr.map((item) => (
+          <motion.div
+            ref={carousel}
+            className="w-full overflow-hidden cursor-grab"
+            whileTap={{ cursor: "grabbing" }}
+          >
+            <motion.div
+              drag="x"
+              dragConstraints={{ right: 0, left: -width }}
+              className="flex pl-5 md:pl-0 container flex-row space-x-4 overflow-x-auto scroll-hide"
+              draggable
+            >
+              {imgArr.map((item, index) => (
                 <img
-                  className="snap-center rounded-lg h-48 w-auto"
+                  className="rounded-lg h-48 w-auto pointer-events-none"
                   src={item}
                   alt=""
+                  key={index}
                 />
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
       <section
